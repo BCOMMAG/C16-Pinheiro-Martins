@@ -88,28 +88,7 @@ export function Navbar() {
 
   return (
     <>
-      {/* 1. LOGO MOBILE FIXA SEPARADA - DESCONECTADA DO MENU E ELEVADA (CLIQUE RETORNA AO TOPO DA PÁGINA INICIAL) */}
-      <div className="lg:hidden fixed -top-3 sm:-top-3.5 left-2 sm:left-3 z-[45] pointer-events-none">
-        <Link
-          href="/"
-          onClick={handleLogoClick}
-          className="flex items-center group focus:outline-none pointer-events-auto"
-          aria-label="Ir para a página inicial"
-        >
-          <div className="relative h-[4.5rem] sm:h-20 w-28 sm:w-32 max-w-[32vw] transition-transform duration-300 group-hover:scale-105">
-            <Image
-              src={currentLogo}
-              alt={OFFICE_INFO.name}
-              fill
-              priority
-              className="object-contain object-left drop-shadow-md"
-              sizes="(max-width: 640px) 128px, 144px"
-            />
-          </div>
-        </Link>
-      </div>
-
-      {/* 2. BARRA DE NAVEGAÇÃO PRINCIPAL */}
+      {/* BARRA DE NAVEGAÇÃO PRINCIPAL */}
       <header
         className={`fixed top-0 left-0 right-0 w-full max-w-full z-40 transition-all duration-300 ${
           isScrolled
@@ -120,11 +99,8 @@ export function Navbar() {
         <div className="max-w-7xl mx-auto px-2.5 sm:px-6 lg:px-8">
           <div className="relative min-h-[2.5rem] sm:min-h-[3rem] flex items-center justify-between gap-2 sm:gap-4">
             
-            {/* Espaçador Mobile para proteger a área da logo sem afetar a altura dos botões */}
-            <div className="lg:hidden w-28 sm:w-32 max-w-[32vw] h-6 flex-shrink-0 pointer-events-none" />
-
-            {/* Logo Desktop: Totalmente Desacoplada da altura da barra do menu (-10% no tamanho, clique retorna ao topo) */}
-            <div className="hidden lg:flex items-center justify-start relative flex-shrink-0 w-52 xl:w-64 h-10 pointer-events-none">
+            {/* 1. Logo Mobile: Perfeitamente alinhada na mesma linha central dos botões do menu (-15% no tamanho) */}
+            <div className="lg:hidden flex items-center justify-start relative flex-shrink-0 w-24 sm:w-28 max-w-[28vw] h-10 pointer-events-none">
               <div className="absolute left-0 top-1/2 -translate-y-1/2 pointer-events-auto">
                 <Link
                   href="/"
@@ -132,14 +108,37 @@ export function Navbar() {
                   className="flex items-center group focus:outline-none"
                   aria-label="Ir para a página inicial"
                 >
-                  <div className="relative h-20 xl:h-24 w-52 xl:w-64 transition-transform duration-300 group-hover:scale-105">
+                  <div className="relative h-[3.8rem] sm:h-[4.25rem] w-24 sm:w-28 max-w-[28vw] transition-transform duration-300 group-hover:scale-105">
+                    <Image
+                      src={currentLogo}
+                      alt={OFFICE_INFO.name}
+                      fill
+                      priority
+                      className="object-contain object-left drop-shadow-md"
+                      sizes="(max-width: 640px) 110px, 125px"
+                    />
+                  </div>
+                </Link>
+              </div>
+            </div>
+
+            {/* 2. Logo Desktop: Totalmente Desacoplada e perfeitamente centralizada (-15% no tamanho, clique retorna ao topo) */}
+            <div className="hidden lg:flex items-center justify-start relative flex-shrink-0 w-44 xl:w-54 h-10 pointer-events-none">
+              <div className="absolute left-0 top-1/2 -translate-y-1/2 pointer-events-auto">
+                <Link
+                  href="/"
+                  onClick={handleLogoClick}
+                  className="flex items-center group focus:outline-none"
+                  aria-label="Ir para a página inicial"
+                >
+                  <div className="relative h-[4.25rem] xl:h-[5.1rem] w-44 xl:w-54 transition-transform duration-300 group-hover:scale-105">
                     <Image
                       src={currentLogo}
                       alt={OFFICE_INFO.name}
                       fill
                       priority
                       className="object-contain object-left drop-shadow-sm"
-                      sizes="(min-width: 1280px) 320px, 260px"
+                      sizes="(min-width: 1280px) 270px, 220px"
                     />
                   </div>
                 </Link>
@@ -371,7 +370,7 @@ export function Navbar() {
                 className="focus:outline-none cursor-pointer block"
                 aria-label="Ir para a página inicial"
               >
-                <div className="relative h-[4.5rem] w-50">
+                <div className="relative h-[3.8rem] w-42">
                   <Image
                     src={drawerLogo}
                     alt={OFFICE_INFO.name}
