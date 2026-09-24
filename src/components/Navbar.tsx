@@ -89,7 +89,7 @@ export function Navbar() {
   return (
     <>
       {/* 1. LOGO MOBILE FIXA SEPARADA - DESCONECTADA DO MENU E ELEVADA (CLIQUE RETORNA AO TOPO DA PÁGINA INICIAL) */}
-      <div className="lg:hidden fixed -top-3.5 sm:-top-4 left-2 sm:left-3 z-[45] pointer-events-none">
+      <div className="lg:hidden fixed -top-3 sm:-top-3.5 left-2 sm:left-3 z-[45] pointer-events-none">
         <Link
           href="/"
           onClick={handleLogoClick}
