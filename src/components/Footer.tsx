@@ -31,13 +31,13 @@ export function Footer() {
               className="block focus:outline-none group cursor-pointer"
               aria-label="Voltar ao início da página"
             >
-              <div className="relative h-20 sm:h-24 w-72 sm:w-80 transition-transform duration-300 group-hover:scale-105">
+              <div className="relative h-18 sm:h-21 w-64 sm:w-72 transition-transform duration-300 group-hover:scale-105">
                 <Image
                   src="/logo_sem_fundo_usarnomodoescuro.png"
                   alt={OFFICE_INFO.name}
                   fill
                   className="object-contain object-left"
-                  sizes="320px"
+                  sizes="(min-width: 640px) 288px, 256px"
                 />
               </div>
             </Link>
